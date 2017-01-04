@@ -10,7 +10,7 @@ class PageGetter:
     def __init__(self):
         self.base_url = "http://db.netkeiba.com"
     
-    def getConnection():
+    def getConnection(self):
         dbname = 'main_database.db'
         conn = sqlite3.connect(dbname)
         return conn.cursor()
@@ -44,7 +44,7 @@ class PageGetter:
         soup = BeautifulSoup(urllib2.urlopen(url), "html.parser")
         race_list = self.get_race_pages(soup)
         
-        #c = getConnection()
+        #c = self.getConnection()
         #race_url_dao = mydao.RaceUrlDao()
         #race_url_dao.insert(c, race_list)
         #race_url_dao.select(c)

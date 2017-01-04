@@ -8,5 +8,6 @@ dbname = 'main_database.db'
 conn = sqlite3.connect(dbname)
 c = conn.cursor()
 
-dao = mydao.RaceUrlDao()
-dao.drop(c)
+dao = mydao.RaceDao()
+dao.create(c)
+c.close()

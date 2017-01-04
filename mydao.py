@@ -79,7 +79,7 @@ class RaceDao:
                         condition,
                         base_info)
                         values (?,?,?,?,?)"""
-        c.executemany(insert_sql, tuple_list)
+        c.execute(insert_sql, tuple_list)
 
     def select(self, c):
         select_sql ="select * from race"
@@ -88,6 +88,7 @@ class RaceDao:
             print "-------"
             for r in res:
                 print r,
+            print "-------"
 
 class HorseUrlDao:
     def create(self, c):
@@ -130,4 +131,5 @@ class RaceUrlDao:
             print "-------"
             for r in res:
                 print r,
+            print "-------"
 
